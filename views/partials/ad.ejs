@@ -1,0 +1,5 @@
+<form name='adAdminForm'>
+    <div>Sn: <input ng-model='ad.sn' required></div>
+    <div>First ad: <input ng-model='ad.first' required></div>
+    <div><button ng-click='publish()' ng-disabled='!adAdminForm.$valid'>Submit</button></div>
+</form>
