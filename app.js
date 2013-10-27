@@ -52,8 +52,10 @@ app.get('/api/name', api.name);
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
-// Socket.io Communication
+// Socket.io Communicatio
 io.sockets.on('connection', require('./routes/socket'));
+
+
 
 /**
  * Start Server

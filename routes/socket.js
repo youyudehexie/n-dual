@@ -2,17 +2,32 @@
  * Serve content over a socket
  */
 
-module.exports = function (socket) {
-  socket.emit('send:name', {
-    name: 'Bob'
-  });
+var Socket = require('../lib/socket');
 
+module.exports = function (socket) {
+  Socket.setSocket(socket); 
   socket.on('ad:publish', function(data, cb){
     socket.broadcast.emit('test', {
       name: 'lizhengfu' 
     })
     cb();
   });
+
+  socket.on('login', function(data){
+    var token = data.token;
+    socket.broadcast.emit('login:' + token, {token: token});
+  
+  })
+
+  socket.on('controller', function(data){
+    var token = data.token;
+    socket.broadcast.emit('desk:' + token, data);
+ 
+  })
+
+  socket.on('test1', function(data, cb){
+    console.log(data); 
+  })
 
 
 };

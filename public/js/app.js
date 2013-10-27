@@ -17,9 +17,21 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/main',
       controller: 'AppCtrl'
     }).
+    when('/controller', {
+      templateUrl: 'partials/controller',
+      controller: 'ControllerCtrl'
+    }).
+    when('/desk', {
+      templateUrl: 'partials/desk',
+      controller: 'DeskCtrl'
+    }).
     when('/ad', {
       templateUrl: 'partials/ad',
       controller: 'AdCtrl'
+    }).
+    when('/login', {
+      templateUrl: 'partials/login',
+      controller: 'LoginCtrl'
     }).
     when('/view2', {
       templateUrl: 'partials/partial2',

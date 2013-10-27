@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'socket.io-clientnode',
+1 verbose cli   'app.js' ]
+2 info using npm@1.3.8
+3 info using node@v0.10.18
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'socket.io-clientnode', null ]
+6 verbose cache add name=undefined spec="socket.io-clientnode" args=["socket.io-clientnode",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'socket.io-clientnode',
+7 verbose parsed url   path: 'socket.io-clientnode',
+7 verbose parsed url   href: 'socket.io-clientnode' }
+8 verbose cache add [ 'app.js', null ]
+9 verbose cache add name=undefined spec="app.js" args=["app.js",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'app.js',
+10 verbose parsed url   path: 'app.js',
+10 verbose parsed url   href: 'app.js' }
+11 silly lockFile 15190460-socket-io-clientnode socket.io-clientnode
+12 verbose lock socket.io-clientnode /home/hexie/.npm/15190460-socket-io-clientnode.lock
+13 silly lockFile 4a68969e-app-js app.js
+14 verbose lock app.js /home/hexie/.npm/4a68969e-app-js.lock
+15 silly lockFile 15190460-socket-io-clientnode socket.io-clientnode
+16 silly lockFile 15190460-socket-io-clientnode socket.io-clientnode
+17 verbose addNamed [ 'socket.io-clientnode', '' ]
+18 verbose addNamed [ null, '*' ]
+19 silly lockFile a8829d84-socket-io-clientnode socket.io-clientnode@
+20 verbose lock socket.io-clientnode@ /home/hexie/.npm/a8829d84-socket-io-clientnode.lock
+21 silly addNameRange { name: 'socket.io-clientnode', range: '*', hasData: false }
+22 verbose url raw socket.io-clientnode
+23 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io-clientnode' ]
+24 verbose url resolved https://registry.npmjs.org/socket.io-clientnode
+25 info trying registry request attempt 1 at 01:09:34
+26 http GET https://registry.npmjs.org/socket.io-clientnode
+27 verbose chmod /home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz 644
+28 verbose tar unpack /home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz
+29 silly lockFile 550bacc0-574415-0-737118482356891-package tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/package
+30 verbose lock tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/package /home/hexie/.npm/550bacc0-574415-0-737118482356891-package.lock
+31 silly lockFile af1a3d8f-574415-0-737118482356891-tmp-tgz tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz
+32 verbose lock tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz /home/hexie/.npm/af1a3d8f-574415-0-737118482356891-tmp-tgz.lock
+33 silly gunzTarPerm modes [ '755', '644' ]
+34 error not a package /home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz
+35 silly lockFile 550bacc0-574415-0-737118482356891-package tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/package
+36 silly lockFile 550bacc0-574415-0-737118482356891-package tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/package
+37 silly lockFile af1a3d8f-574415-0-737118482356891-tmp-tgz tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz
+38 silly lockFile af1a3d8f-574415-0-737118482356891-tmp-tgz tar:///home/hexie/tmp/npm-4054-IQBHZ2GA/1382634574415-0.737118482356891/tmp.tgz
+39 silly lockFile 4a68969e-app-js app.js
+40 silly lockFile 4a68969e-app-js app.js
+41 verbose addNamed [ 'app.js', '' ]
+42 verbose addNamed [ null, '*' ]
+43 silly lockFile f582df3f-app-js app.js@
+44 verbose lock app.js@ /home/hexie/.npm/f582df3f-app-js.lock
+45 silly addNameRange { name: 'app.js', range: '*', hasData: false }
+46 verbose url raw app.js
+47 verbose url resolving [ 'https://registry.npmjs.org/', './app.js' ]
+48 verbose url resolved https://registry.npmjs.org/app.js
+49 info trying registry request attempt 1 at 01:09:34
+50 http GET https://registry.npmjs.org/app.js
+51 http 404 https://registry.npmjs.org/socket.io-clientnode
+52 silly registry.get cb [ 404,
+52 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+52 silly registry.get     date: 'Thu, 24 Oct 2013 17:09:36 GMT',
+52 silly registry.get     'content-type': 'application/json',
+52 silly registry.get     'content-length': '52',
+52 silly registry.get     'cache-control': 'must-revalidate' } ]
+53 silly lockFile a8829d84-socket-io-clientnode socket.io-clientnode@
+54 silly lockFile a8829d84-socket-io-clientnode socket.io-clientnode@
+55 error 404 'socket.io-clientnode' is not in the npm registry.
+55 error 404 You should bug the author to publish it
+55 error 404
+55 error 404 Note that you can also install from a
+55 error 404 tarball, folder, or http url, or git url.
+56 error System Linux 3.11.0-12-generic
+57 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "socket.io-clientnode" "app.js"
+58 error cwd /home/hexie/workplace/n-dual
+59 error node -v v0.10.18
+60 error npm -v 1.3.8
+61 error code E404
+62 verbose exit [ 1, true ]
