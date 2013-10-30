@@ -8,9 +8,6 @@ angular.module('myApp.controllers', []).
       $scope.name = data.name;
     });
 
-    socket.on('test', function(data){
-      console.log(data);
-    });
   }).
   controller('AdCtrl', function ($scope, $location, socket) {
     socket.on('ok', function(data){
@@ -61,12 +58,14 @@ angular.module('myApp.controllers', []).
     }    
 
     var token = randomString(8);
+    console.log('login:' + token);
     socket.on('login:' + token, function(data){
-        window.location.href = 'http://192.168.1.103:3000/desk?token=' + token;
+        console.log('here');
+        window.location.href = 'http://192.168.1.103:3000/partials/deck?token=' + token;
     });
     
     $('#qrcode').qrcode({
-        text: "http://192.168.1.103:3000/controller?token=" + token 
+        text: "http://192.168.1.103:3000/partials/controller1?token=" + token 
     });
 
   }).

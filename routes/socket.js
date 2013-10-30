@@ -13,21 +13,26 @@ module.exports = function (socket) {
     cb();
   });
 
-  socket.on('login', function(data){
+  socket.on('login', function(data, cb){
     var token = data.token;
     socket.broadcast.emit('login:' + token, {token: token});
   
   })
 
   socket.on('controller', function(data){
+    console.log('fuck');
     var token = data.token;
     socket.broadcast.emit('desk:' + token, data);
  
   })
 
-  socket.on('test1', function(data, cb){
-    console.log(data); 
-  })
+    socket.on('message', function(message){
+        console.log(message)
+        var obj = JSON.parse(message);
+        var token = obj.token;
+        var command = obj.command;
+		socket.broadcast.emit('message:' + token, command);
+	});
 
 
 };

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="3D Gallery with CSS3 and jQuery" />
+        <meta name="keywords" content="3d, gallery, jquery, css3, auto, slideshow, navigate, mouse scroll, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/css/app.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<script type="text/javascript" src="/js/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+    <div class="container">
+    <div class="dg-wrapper">
+        <section id="dg-container" class="dg-container">
+            <div class="dg-wrapper">
+                <a href="#"><img src="/img/1.jpg" alt="image01"><div>http://www.colazionedamichy.it/</div></a>
+                <a href="#"><img src="/img/2.jpg" alt="image02"><div>http://www.percivalclo.com/</div></a>
+                <a href="#"><img src="/img/3.jpg" alt="image03"><div>http://www.wanda.net/fr</div></a>
+                <a href="#"><img src="/img/4.jpg" alt="image04"><div>http://lifeingreenville.com/</div></a>
+                <a href="#"><img src="/img/5.jpg" alt="image05"><div>http://circlemeetups.com/</div></a>
+                <a href="#"><img src="/img/6.jpg" alt="image06"><div>http://www.castirondesign.com/</div></a>
+                <a href="#"><img src="/img/7.jpg" alt="image07"><div>http://www.foundrycollective.com/</div></a>
+                <a href="#"><img src="/img/8.jpg" alt="image08"><div>http://www.mathiassterner.com/home</div></a>
+                <a href="#"><img src="/img/9.jpg" alt="image09"><div>http://learnlakenona.com/</div></a>
+                <a href="#"><img src="/img/10.jpg" alt="image10"><div>http://www.neighborhood-studio.com/</div></a>
+                <a href="#"><img src="/img/11.jpg" alt="image11"><div>http://www.beckindesign.com/</div></a>
+                <a href="#"><img src="/img/12.jpg" alt="image12"><div>http://kicksend.com/</div></a>
+            </div>
+            <nav>	
+                <span class="dg-prev">&lt;</span>
+                <span class="dg-next">&gt;</span>
+            </nav>
+        </section>
+    </div>
+
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.gallery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+
+        var messageHandler;
+        if (typeof jQuery === 'undefined') jQuery = {};
+
+        function messageHandler(message, a, b, c, d) {
+            if(message == "nextSection"){
+                $('.dg-next').click(); 
+            }
+            if(message == "prevSection"){
+                $('.dg-prev').click();
+            }
+        }
+
+        var iosocket = io.connect();
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }  
+
+        var token = getUrlVars()['token']
+
+        iosocket.on('connect', function () {
+            console.log('connected');
+        });
+
+        iosocket.on('message:' + token, function(message) {
+            messageHandler(message);
+        });
+
+
+        iosocket.on('disconnect', function() {
+            console.log('disconnected');
+        });
+
+			$(function() {
+				$('#dg-container').gallery();
+			});
+		</script>
+    </body>
+</html>
+
