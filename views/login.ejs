@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html> 
+    <% include partials/header.ejs %> 
+    <body>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <script src="bower_components/jquery.qrcode/src/qrcode.js"></script>
+        <script src="bower_components/jquery.qrcode/src/jquery.qrcode.js"></script>
+        <div class="container">
+            <center id="qrcode"></center>
+        </div>
+
+        <script>
+        
+        var socket = io.connect();
+        var randomString = function(length){
+            var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+            
+            if (! length) {
+                length = Math.floor(Math.random() * chars.length);
+            }
+            
+            var str = '';
+            for (var i = 0; i < length; i++) {
+                str += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return str;  
+        }    
+
+        var token = randomString(8);
+        var deck = randomString(8);
+        socket.emit('register', {
+            token: token
+        }, function(){
+            $('#qrcode').qrcode({
+                text: "http://192.168.1.103:3000/controller?token=" + token + '&deck=' + deck 
+            });
+        })
+
+    
+        socket.on('deck', function(data){
+            window.location.href = "http://192.168.1.103:3000/deck?token=" + deck;  
+        })
+
+        
+        </script>
+
+    </body>
+
+</html>

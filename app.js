@@ -3,11 +3,12 @@
  * Module dependencies
  */
 
-var express = require('express'),
-  routes = require('./routes'),
-  api = require('./routes/api'),
-  http = require('http'),
-  path = require('path');
+var express = require('express');
+var routes = require('./routes');
+var api = require('./routes/api');
+var http = require('http');
+var path = require('path');
+var Socket = require('./lib/socket');
 
 var app = module.exports = express();
 var server = require('http').createServer(app);
@@ -44,17 +45,22 @@ if (app.get('env') === 'production') {
 
 // serve index and view partials
 app.get('/', routes.index);
+app.get('/controller', routes.controller);
+app.get('/deck', routes.deck);
+app.get('/login', routes.login);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
 app.get('/api/name', api.name);
+app.get('/api/test', api.test);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
 // Socket.io Communicatio
-io.sockets.on('connection', require('./routes/socket'));
+//io.sockets.on('connection', require('./routes/socket'));
 
+Socket.connect(io);
 
 
 /**

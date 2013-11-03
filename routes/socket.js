@@ -20,7 +20,6 @@ module.exports = function (socket) {
   })
 
   socket.on('controller', function(data){
-    console.log('fuck');
     var token = data.token;
     socket.broadcast.emit('desk:' + token, data);
  

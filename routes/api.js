@@ -6,8 +6,6 @@ var Socket = require('../lib/socket');
 
 exports.name = function (req, res) {
 
-  socket = Socket.getInstance();
-  console.log(socket);
   socket.broadcast.emit('ok', {
     name: 'izheu' 
   })
@@ -15,3 +13,9 @@ exports.name = function (req, res) {
   	name: 'Bob'
   });
 };
+
+exports.test = function(req, res){
+    Socket.emit('news',{
+        name: 'ok' 
+    })
+}

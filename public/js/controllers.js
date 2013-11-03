@@ -9,37 +9,27 @@ angular.module('myApp.controllers', []).
     });
 
   }).
-  controller('AdCtrl', function ($scope, $location, socket) {
-    socket.on('ok', function(data){
-        console.log(data); 
-    })
-    $scope.publish = function(){
-      socket.emit('ad:publish', $scope.ad, function(){
-        window.alert('ok'); 
-      });
-    }
-  }).
   controller('DeskCtrl', function($scope, $location, socket){
 
     var token = $location.search().token;
+    console.log(token)
+
+    var messageHandler = function(message){
+        if(message == "nextSection"){
+            $('.dg-next').click(); 
+        }
+        if(message == "prevSection"){
+            $('.dg-prev').click();
+        }
+    }
 
     $('#dg-container').gallery();
 
-    socket.on('desk:' + token, function(data){
-        if(data.msg == 'right'){
-          $('.dg-prev').click(); 
+    socket.on('message:' + token, function(message) {
+        messageHandler(message);
+    });
 
-        }
-        if(data.msg == 'left'){
-           $('.dg-next').click();          
-        }
-    })
-
-    $scope.test = function(){
-        
-    }
-     // $('.dg-prev').click();
-     
+    
   }).
   controller('LoginCtrl', function($scope, socket){
     var randomString = function(length){
@@ -58,14 +48,12 @@ angular.module('myApp.controllers', []).
     }    
 
     var token = randomString(8);
-    console.log('login:' + token);
     socket.on('login:' + token, function(data){
-        console.log('here');
-        window.location.href = 'http://192.168.1.103:3000/partials/deck?token=' + token;
+        window.location.href = 'http://192.168.1.103:3000/deck?token=' + token;
     });
     
     $('#qrcode').qrcode({
-        text: "http://192.168.1.103:3000/partials/controller1?token=" + token 
+        text: "http://192.168.1.103:3000/controller?token=" + token 
     });
 
   }).
