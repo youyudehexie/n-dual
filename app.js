@@ -39,26 +39,25 @@ if (app.get('env') === 'production') {
 };
 
 
+var static = function(req, res){
+    res.sendfile(path.join(__dirname, 'public') + req.path + '.html');
+}
+
 /**
  * Routes
  */
 
 // serve index and view partials
 app.get('/', routes.index);
-app.get('/controller', routes.controller);
-app.get('/deck', routes.deck);
-app.get('/login', routes.login);
-app.get('/partials/:name', routes.partials);
+app.get('/controller', static);
+app.get('/widgets', static);
 
-// JSON API
-app.get('/api/name', api.name);
-app.get('/api/test', api.test);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get('*', function(req, res){
+    res.send(500);
+});
 
-// Socket.io Communicatio
-//io.sockets.on('connection', require('./routes/socket'));
 
 Socket.connect(io);
 

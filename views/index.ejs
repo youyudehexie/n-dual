@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html> 
-    <% include partials/header.ejs %> 
     <body>
-        <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
+
+        <script src="/js/ndual.js"></script>
         <script>
-            var socket = io.connect();
-            socket.on('news', function(data){
-                console.log(data)          
-                    
+            Ndual(function(){
+                console.log('dddd')         
             })
-
-
         </script>
 
     </body>

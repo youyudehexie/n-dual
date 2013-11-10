@@ -1,0 +1,60 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Remotes</title>
+  <link rel="stylesheet" type="text/css" href='https://remoats.s3.amazonaws.com/stylesheets/widgets/sync.css'>
+
+  
+</head>
+<body>
+
+<div class="beacon has-remotes">
+  
+  <div class="anchor-container">
+        
+      <a class="anchor-button">
+          <img class="icon-off" src='https://remoats.s3.amazonaws.com/images/remotes_off.png'>
+          <img style="display:none;" class="icon-on" src='https://remoats.s3.amazonaws.com/images/remotes_on.png'>
+      </a>
+  </div>
+  <div class="action-container">
+      <a data-content-offset="0px" class="action-button">
+        <img src='https://remoats.s3.amazonaws.com/images/widget/barcode.png'>
+      </a>
+      <!-- <a data-content-offset="-200px" class="action-button">
+        <img src="https://remoats.s3.amazonaws.com/images/widget/text.png?Signature=4wFBJQ%2FQPrkR6jtLP9B%2Bf8Uxtsg%3D&Expires=1383743393&AWSAccessKeyId=AKIAIHMFFCLYZGNTZWOQ">
+      </a>
+      <a data-content-offset="-400px" class="action-button">
+        <img src="../images/heart.png">
+      </a> -->
+  </div> 
+  <div class="notification-container" style="display:none;">
+    <span class="notification-synced" style="display:none;">Synced!</span>
+    <span class="notification-off-sync" style="display:none;">Out of sync!</span>
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+  <div id="action-panel">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+            <img id="sync-qr" class="qr">
+        </li>
+        <li id="textToSyncTab">
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+  
+
+  
+  
+</body>
+</html>
+
