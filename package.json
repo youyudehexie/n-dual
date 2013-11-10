@@ -6,5 +6,9 @@
     "socket.io": "~0.9.16",
     "express": "~3.2.6",
     "ejs": "~0.8.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.7"
   }
 }
