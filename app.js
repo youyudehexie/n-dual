@@ -5,7 +5,6 @@
 
 var express = require('express');
 var routes = require('./routes');
-var api = require('./routes/api');
 var http = require('http');
 var path = require('path');
 var Socket = require('./lib/socket');
@@ -19,7 +18,7 @@ var io = require('socket.io').listen(server);
  */
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3060);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));

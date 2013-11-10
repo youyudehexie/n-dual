@@ -3,7 +3,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index');
+  res.redirect('https://github.com/youyudehexie/n-dual');
 };
 
 exports.partials = function (req, res) {
