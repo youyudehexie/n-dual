@@ -17,6 +17,7 @@ Refer to [controldeck.js](), [remote.js]()
 
 2.wechat bowser performance is terrible, please use chrome.
 
+
 ##Make your own
 
 	<script src="/socket.io/socket.io.js"></script>
@@ -37,3 +38,6 @@ the phone controller will send message to your application.you can catch the mes
 - [example2]()
 
 
+##Download
+
+https://github.com/youyudehexie/n-dual/tree/master/public/build
