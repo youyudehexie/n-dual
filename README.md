@@ -2,9 +2,9 @@
 
 ##Control Web Application with phone or pad
 
-Create by [youyudehexie]()
+Create by [youyudehexie](https://github.com/youyudehexie)
 
-Refer to [controldeck.js](), [remote.js]()
+Refer to [controldeck.js](https://github.com/johnpolacek/controldeck.js), [remote.js](https://github.com/Remotes/Remotes)
 
 ##Getting Started
 1. Go to http://wechat.whattoc.com/example1 to view demo1
@@ -34,8 +34,8 @@ the phone controller will send message to your application.you can catch the mes
 
 ##Example
 
-- [example1]()
-- [example2]()
+- [example1](http://ndual.whattoc.com/example1)
+- [example2](http://ndual.whattoc.com/example2)
 
 
 ##Download
