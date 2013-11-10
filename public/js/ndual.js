@@ -27,8 +27,9 @@ function Ndual(cb){
         return str;
     }
 
+
+    var token = randomString(5) 
     function createWdiget(){
-        var token = randomString(5) 
         var googleQrApi = 'https://chart.googleapis.com/chart?cht=qr&chld=H&chs=150x150&chl=' 
         var wdigetUrl = googleQrApi + 'http://ndual.whattoc.com/controller?token=' + token;
         Widget(wdigetUrl);
