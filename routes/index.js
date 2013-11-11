@@ -11,3 +11,7 @@ exports.partials = function (req, res) {
   res.render('partials/' + name);
 };
 
+exports.widget = function(req, res){
+  var token = req.query.token || '';
+  res.render('widget', {token: token});
+}

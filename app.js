@@ -49,7 +49,7 @@ var static = function(req, res){
 // serve index and view partials
 app.get('/', routes.index);
 app.get('/controller', static);
-app.get('/widgets', static);
+app.get('/widget', routes.widget);
 
 
 // redirect all others to the index (HTML5 history)

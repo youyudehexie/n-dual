@@ -1,0 +1,22 @@
+
+<html>
+<head>
+</head>
+<body>
+
+<script src="http://code.jquery.com/jquery.min.js"></script> 
+<script type="text/javascript" src="/js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="/js/qrcode.js"></script>
+
+<div id="qrcodeTable"></div>
+<script>
+	jQuery('#qrcodeTable').qrcode({
+        width: 100,
+        height: 100,
+        text	: "http://ndual.whattoc.com/controller?token=<%= token %>"
+	});	
+</script>
+
+</body>
+</html>
+
