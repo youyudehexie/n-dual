@@ -13,9 +13,7 @@ Refer to [controldeck.js](https://github.com/johnpolacek/controldeck.js), [remot
 
 **Attention**:
 
-1.qrcode is generate by google api,may be you should use VPN.
-
-2.wechat bowser performance is terrible, please use chrome.
+1.wechat bowser performance is terrible, please use chrome.
 
 
 ##Make your own
@@ -24,13 +22,12 @@ Refer to [controldeck.js](https://github.com/johnpolacek/controldeck.js), [remot
     <script src="/ndual.js"></script>
     <script>
         Ndual(function(message){
-            if(message === 'dragright') Reveal.navigateRight();  
+            if(message === 'dragright') Reveal.navigateRight(); //doSomething you want to do,here is an example 
             else if (message === 'dragleft') Reveal.navigateLeft();
         })
     </script>
         
 the phone controller will send message to your application.you can catch the message and do something you wantto do.such as click something, move element.
-
 
 ##Example
 
@@ -41,3 +38,7 @@ the phone controller will send message to your application.you can catch the mes
 ##Download
 
 https://github.com/youyudehexie/n-dual/tree/master/public/build
+
+##My Seed Project
+
+https://github.com/youyudehexie/ndual-seed
