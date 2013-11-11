@@ -30,7 +30,7 @@ function Ndual(cb){
     var token = randomString(5) 
     function createWdiget(token){
         var apiUrl = 'http://qr.liantu.com/api.php?w=150&m=10&text='
-        var widgetUrl = apiUrl + 'http://ndual.whattoc.com/widget?token=' + token;
+        var widgetUrl = apiUrl + 'http://ndual.whattoc.com/controller?token=' + token;
         Widget(widgetUrl);
     }
 
