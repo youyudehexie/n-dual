@@ -27,15 +27,15 @@ function Ndual(cb){
         return str;
     }
 
-    function createWdiget(){
-        var token = randomString(5) 
+    var token = randomString(5) 
+    function createWdiget(token){
         var googleQrApi = 'https://chart.googleapis.com/chart?cht=qr&chld=H&chs=150x150&chl=' 
         var wdigetUrl = googleQrApi + 'http://ndual.whattoc.com/controller?token=' + token;
         Widget(wdigetUrl);
     }
 
-    createWdiget();
-    var iosocket = io.connect('http://ndual.whattoc.com');
+    createWdiget(token);
+    var iosocket = io.connect('http://ndual.whattoc.com:80');
 
     iosocket.on('connect', function () {
         console.log('connected');
