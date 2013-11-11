@@ -7,7 +7,7 @@ Create by [youyudehexie](https://github.com/youyudehexie)
 Refer to [controldeck.js](https://github.com/johnpolacek/controldeck.js), [remote.js](https://github.com/Remotes/Remotes)
 
 ##Getting Started
-1. Go to http://wechat.whattoc.com/example1 to view demo1
+1. Go to http://ndual.whattoc.com/example1 to view demo1
 2. Scan the qrcode on screen with your phone and jump to the url
 3. Wait for a few second, you can control your web application by drag.
 
