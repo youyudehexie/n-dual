@@ -35,7 +35,7 @@ function Ndual(cb){
     }
 
     createWdiget(token);
-    var iosocket = io.connect('http://ndual.whattoc.com:80');
+    var iosocket = io.connect();
 
     iosocket.on('connect', function () {
         console.log('connected');
